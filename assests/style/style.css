@@ -1,7 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
-html{
-    background: #03001C;
+:root{
+    --card-login-dark: #0f0c31;
+    --card-login-light: #f0f3ce;
+    
+    --background-dark: #03001C;
+    --background-light: #fcffe3;
+
+    --botao-dark:  #69e6c0;
+    --botao-light: #96193f;
+
+    --textfield-dark: #3f306d;
+    --textfield-light: #c0cf92;
+
+    --color-h1-dark: #69e6c0 ;
+    --color-h1-light: #85063c;
+
+    --color-textfield-dark:#f0ffffde;
+    --color-textfield-light: #000;
+
+    --shadow-botao-dark: #21463a;
+    --shadow-botao-light: #deb9c5;
+
+    --placehoder-dark: #8dadc7;
+    --placehoder-light: #99576b;
+}
+
+html .dark-mode{
+    background: var(--background-dark);
 }
 
 body{
@@ -14,7 +40,7 @@ body{
 .main-login{
     width: 100vw;
     height: 100vh;
-    background: #03001C;
+    background: var(--background-dark);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,12 +57,21 @@ body{
 
 .left-login > h1 {
     font-size: 3vw;
-    color: #69e6c0 ;
+    color: var(--color-h1-dark);
 }
 
 .left-login-img{
     width: 35vw;
 }
+
+#mode-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 35px; 
+    right: 35px;
+    font-size: 20px;
+    color: var(--color-h1-dark); 
+  }
 
 .right-login {
     width: 50vw;
@@ -46,23 +81,25 @@ body{
     align-items: center;
 }
 
-.card-login{
+.card-login {
+    position: relative;
     width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background-color: #0f0c31;
+    background-color: var(--card-login-dark);
     border-radius: 30px;
     box-shadow: 0px 10px 40px #000000b2;
-}
+  }
 
 .card-login > h1{
-    color: #6be6c1;
+    color: var(--color-h1-dark);
     font-weight: 800;
     margin: 0;
 }
+
 
 .textfield{
     width: 80%;
@@ -78,8 +115,8 @@ body{
     border: none;
     border-radius: 10px;
     padding: 15px;
-    background-color: #3f306d;
-    color: #f0ffffde;
+    background-color:var(--textfield-dark);
+    color: var(--color-textfield-dark);
     font-size: 12pt;
     box-shadow: 0px 10px 40px #000000b2;
     outline: none;
@@ -87,12 +124,12 @@ body{
 }
 
 .textfield > label {
-    color: #f0ffffde;
+    color: var(--color-textfield-dark);
     margin-bottom: 10px;
 }
 
 .textfield > input::placeholder{
-    color: #8dadc7;
+    color: var(--placehoder-dark);
 }
 
 .btn-login{
@@ -106,9 +143,13 @@ body{
     font-weight: 800;
     letter-spacing: 2px;
     color: #080335;
-    background-color: #69e6c0;
+    background-color: var(--botao-dark);
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #21463a;
+    box-shadow: 0px 10px 40px -12px var(--shadow-botao-dark);
+}
+
+.btn-login:hover{
+    transform: scale(1.01);
 }
 
 @media screen and (max-width:950px) {
@@ -143,4 +184,47 @@ body{
         width: 90%;
     }
 
+}
+
+.dark-mode {
+    background: var(--background-light);
+}
+
+.dark-mode .main-login{
+    background: var(--background-light);
+}
+
+.dark-mode .card-login {
+    background-color: var(--card-login-light);
+}
+
+.dark-mode .card-login > h1{
+    color: var(--color-h1-light);
+}
+
+.dark-mode #mode-icon {
+    color: var(--color-h1-light);
+}
+
+.dark-mode .textfield > input {
+    background-color: var(--textfield-light);
+    color: var(--color-textfield-light);
+}
+
+.dark-mode .textfield > label{
+    color: var(--color-textfield-light);
+}
+
+
+.dark-mode .left-login > h1 {
+    color: var(--color-h1-light);
+}
+
+.dark-mode .textfield > input::placeholder {
+    color: var(--placehoder-light);
+}
+
+.dark-mode .btn-login {
+    background-color: var(--botao-light);
+    box-shadow: 0px 10px 40px -12px var(--shadow-botao-light);
 }
