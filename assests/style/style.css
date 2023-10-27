@@ -26,15 +26,14 @@
     --placehoder-light: #99576b;
 }
 
-html .dark-mode{
-    background: var(--background-dark);
-}
+
 
 body{
     margin: 0;
     border: 0;
     font-family: 'Ubuntu', sans-serif;
     box-sizing: border-box;
+    background: var(--background-dark);
 }
 
 .main-login{
@@ -186,45 +185,49 @@ body{
 
 }
 
-.dark-mode {
+body .light-mode{
     background: var(--background-light);
 }
 
-.dark-mode .main-login{
+.light-mode {
     background: var(--background-light);
 }
 
-.dark-mode .card-login {
+.light-mode .main-login {
+    background: var(--background-light);
+}
+
+.light-mode .card-login {
     background-color: var(--card-login-light);
 }
 
-.dark-mode .card-login > h1{
+.light-mode .card-login > h1 {
     color: var(--color-h1-light);
 }
 
-.dark-mode #mode-icon {
+.light-mode #mode-icon {
     color: var(--color-h1-light);
 }
 
-.dark-mode .textfield > input {
+.light-mode .textfield > input {
     background-color: var(--textfield-light);
     color: var(--color-textfield-light);
 }
 
-.dark-mode .textfield > label{
+.light-mode .textfield > label {
     color: var(--color-textfield-light);
 }
 
-
-.dark-mode .left-login > h1 {
+.light-mode .left-login > h1 {
     color: var(--color-h1-light);
 }
 
-.dark-mode .textfield > input::placeholder {
+.light-mode .textfield > input::placeholder {
     color: var(--placehoder-light);
 }
 
-.dark-mode .btn-login {
+.light-mode .btn-login {
     background-color: var(--botao-light);
     box-shadow: 0px 10px 40px -12px var(--shadow-botao-light);
 }
+
